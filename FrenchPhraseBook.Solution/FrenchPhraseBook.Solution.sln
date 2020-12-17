@@ -1,0 +1,69 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrenchPhraseBook", "FrenchPhraseBook\FrenchPhraseBook.csproj", "{EDF7552B-3D43-404D-8741-CBF7A95CCCC6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{C3C0F1F8-B7B8-4327-AC92-6068861FD4BC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{19B28008-1D9C-4C5A-B867-BC94CB562F2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrenchPhraseBook.Backend.Storage", "FrenchPhraseBook.Backend.Storage\FrenchPhraseBook.Backend.Storage.csproj", "{54B8BE9A-D2CF-4E4C-844B-1787D414B1CF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{C37FB0C5-2235-4135-ADD8-E3BA7C36AB04}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Proxy", "Proxy", "{55AC2C93-6997-4444-8B57-E37BA33243AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrenchPhraseBook.Backend.Proxy", "FrenchPhraseBook.Backend.Proxy\FrenchPhraseBook.Backend.Proxy.csproj", "{E09B3711-5204-4418-B88F-0F5E2491B51F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EDF7552B-3D43-404D-8741-CBF7A95CCCC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDF7552B-3D43-404D-8741-CBF7A95CCCC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDF7552B-3D43-404D-8741-CBF7A95CCCC6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{EDF7552B-3D43-404D-8741-CBF7A95CCCC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDF7552B-3D43-404D-8741-CBF7A95CCCC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDF7552B-3D43-404D-8741-CBF7A95CCCC6}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{54B8BE9A-D2CF-4E4C-844B-1787D414B1CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54B8BE9A-D2CF-4E4C-844B-1787D414B1CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54B8BE9A-D2CF-4E4C-844B-1787D414B1CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54B8BE9A-D2CF-4E4C-844B-1787D414B1CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E09B3711-5204-4418-B88F-0F5E2491B51F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E09B3711-5204-4418-B88F-0F5E2491B51F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E09B3711-5204-4418-B88F-0F5E2491B51F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E09B3711-5204-4418-B88F-0F5E2491B51F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EDF7552B-3D43-404D-8741-CBF7A95CCCC6} = {C3C0F1F8-B7B8-4327-AC92-6068861FD4BC}
+		{54B8BE9A-D2CF-4E4C-844B-1787D414B1CF} = {C37FB0C5-2235-4135-ADD8-E3BA7C36AB04}
+		{C37FB0C5-2235-4135-ADD8-E3BA7C36AB04} = {19B28008-1D9C-4C5A-B867-BC94CB562F2F}
+		{55AC2C93-6997-4444-8B57-E37BA33243AC} = {19B28008-1D9C-4C5A-B867-BC94CB562F2F}
+		{E09B3711-5204-4418-B88F-0F5E2491B51F} = {55AC2C93-6997-4444-8B57-E37BA33243AC}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://dangerchcovich.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = FrenchPhraseBook\\FrenchPhraseBook.csproj
+		SccProjectTopLevelParentUniqueName1 = FrenchPhraseBook.Solution.sln
+		SccProjectName1 = FrenchPhraseBook
+		SccLocalPath1 = FrenchPhraseBook
+		SccProjectUniqueName2 = FrenchPhraseBook.Backend.Storage\\FrenchPhraseBook.Backend.Storage.csproj
+		SccProjectTopLevelParentUniqueName2 = FrenchPhraseBook.Solution.sln
+		SccProjectName2 = FrenchPhraseBook.Backend.Storage
+		SccLocalPath2 = FrenchPhraseBook.Backend.Storage
+		SccProjectUniqueName3 = FrenchPhraseBook.Backend.Proxy\\FrenchPhraseBook.Backend.Proxy.csproj
+		SccProjectTopLevelParentUniqueName3 = FrenchPhraseBook.Solution.sln
+		SccProjectName3 = FrenchPhraseBook.Backend.Proxy
+		SccLocalPath3 = FrenchPhraseBook.Backend.Proxy
+	EndGlobalSection
+EndGlobal

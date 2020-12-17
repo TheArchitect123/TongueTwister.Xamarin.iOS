@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="#FFFFFF">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/SectionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="9.0sp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="0dp"
+            android:textAlignment="textStart"
+            android:textColor="#616161" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#FFFFFF">
+            <ImageView
+                android:id="@+id/NavDrawerIcon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:scaleType="fitXY"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp" />
+            <TextView
+                android:id="@+id/NavDrawerLabel"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="13.0sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="-3dp"
+                android:textAlignment="textStart"
+                android:textColor="#616161" />
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/SelectableView"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/NavDrawerStyle"
+        android:clickable="true"
+        android:focusable="true" />
+</FrameLayout>

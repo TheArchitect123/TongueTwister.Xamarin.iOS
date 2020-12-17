@@ -1,0 +1,267 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SQLite.Net.Cipher</name>
+    </assembly>
+    <members>
+        <member name="T:SQLite.Net.Cipher.Data.SecureDatabase">
+            <summary>
+            This is the main entiry in this library. Extend this class to get the benefits of this library. 
+            You will need to implement the abstract method CreateTables();
+            </summary>
+        </member>
+        <member name="M:SQLite.Net.Cipher.Data.SecureDatabase.#ctor(SQLite.Net.Interop.ISQLitePlatform,System.String)">
+            <summary>
+            Construct a new instance of SecureDatabase. 
+            </summary>
+            <param name="platform">The platform specific engine of SQLite (ISQLitePlatform)</param>
+            <param name="dbfile">The sqlite db file path</param>
+        </member>
+        <member name="M:SQLite.Net.Cipher.Data.SecureDatabase.#ctor(SQLite.Net.Interop.ISQLitePlatform,System.String,System.String)">
+            <summary>
+            Construct a new instance of SecureDatabase. 
+            </summary>
+            <param name="platform">The platform specific engine of SQLite (ISQLitePlatform)</param>
+            <param name="dbfile">The sqlite db file path</param>
+            /// <param name="randomSaltText">The random salt text</param>
+        </member>
+        <member name="M:SQLite.Net.Cipher.Data.SecureDatabase.#ctor(SQLite.Net.Interop.ISQLitePlatform,System.String,SQLite.Net.Cipher.Interfaces.ICryptoService)">
+            <summary>
+            Construct a new instance of SecureDatabase. 
+            This ctor allows you pass an instance of the CryptoService. You could use the one provided by SQLite.Net.Cipher or build and pass your own. 
+            </summary>
+            <param name="platform">The platform specific engine of SQLite (ISQLitePlatform)</param>
+            <param name="dbfile">The sqlite db file path</param>
+            <param name="cryptoService">An instance of the Crypto Service</param>
+        </member>
+        <member name="M:SQLite.Net.Cipher.Data.SecureDatabase.CreateTables">
+            <summary>
+            Override this method to create your tables 
+            </summary>
+        </member>
+        <member name="M:SQLite.Net.Cipher.Data.SecureDatabase.SecureExecuteScalar(System.String,System.Object[])">
+            <summary>
+            Executes an sql query against the database. 
+            This method does not do anything more than the base.ExecuteScalar();
+            </summary>
+            <param name="query"></param>
+            <param name="args"></param>
+            <returns>no of affected rows</returns>
+        </member>
+        <member name="M:SQLite.Net.Cipher.Data.SecureDatabase.SQLite#Net#Cipher#Interfaces#ISecureDatabase#SecureQuery``1(System.String,System.String,System.Object[])">
+            <summary>
+            gets a list of objects from the database using Query() method 
+            and it decrypt all object properties that have the attribute Secure. 
+            </summary>
+            <typeparam name="T">The type of the object</typeparam>
+            <param name="query">The Sql query</param>
+            <param name="keySeed">The encryption key seed (must be the same that you use when inserted into the database).</param>
+            <param name="args">The sql query parameters.</param>
+            <returns>List of T </returns>
+        </member>
+        <member name="M:SQLite.Net.Cipher.Data.SecureDatabase.SQLite#Net#Cipher#Interfaces#ISecureDatabase#SecureInsert``1(``0,System.String)">
+            <summary>
+            Inserts into the database
+            Before inserting, it encrypts all propertiese that have the Secure attribute. 
+            </summary>
+            <typeparam name="T">The Type of the object to be inserted</typeparam>
+            <param name="obj"> the object to be inserted to the database</param>
+            <param name="keySeed">The encryption key seed. You must use the same key seed when accessing the object out of the database.</param>
+            <returns>no of affected rows</returns>
+        </member>
+        <member name="M:SQLite.Net.Cipher.Data.SecureDatabase.SQLite#Net#Cipher#Interfaces#ISecureDatabase#SecureInsertOrReplace``1(``0,System.String)">
+            <summary>
+            Inserts or Replace into the database
+            Before inserting, it encrypts all propertiese that have the Secure attribute. 
+            </summary>
+            <typeparam name="T">The Type of the object to be inserted</typeparam>
+            <param name="obj"> the object to be inserted to the database</param>
+            <param name="keySeed">The encryption key seed. You must use the same key seed when accessing the object out of the database.</param>
+            <returns>no of affected rows</returns>
+        </member>
+        <member name="M:SQLite.Net.Cipher.Data.SecureDatabase.SQLite#Net#Cipher#Interfaces#ISecureDatabase#SecureUpdate``1(``0,System.String)">
+            <summary>
+            Updates a row in the database
+            Before Before Updating, it encrypts all propertiese that have the Secure attribute. 
+            </summary>
+            <typeparam name="T">The Type of the object to be updated</typeparam>
+            <param name="obj"> the object to be updated to the database</param>
+            <param name="keySeed">The encryption key seed. You must use the same key seed when accessing the object out of the database.</param>
+            <returns>no of affected rows</returns>
+        </member>
+        <member name="M:SQLite.Net.Cipher.Data.SecureDatabase.SQLite#Net#Cipher#Interfaces#ISecureDatabase#SecureDelete``1(System.String)">
+            <summary>
+            deletes a row in the database
+            </summary>
+            <typeparam name="T">The Type of the object to be deleted</typeparam>
+            <param name="id">The id of the object to be deleted.</param>
+            <returns>no of affected rows</returns>
+        </member>
+        <member name="M:SQLite.Net.Cipher.Data.SecureDatabase.SQLite#Net#Cipher#Interfaces#ISecureDatabase#SecureGet``1(System.String,System.String)">
+            <summary>
+            Gets an object of the database
+            If the object is found, before returned, this method will decrypt all its properties that have the Secure attribute.
+            </summary>
+            <typeparam name="T">The Type of the object to be accessed</typeparam>
+            <param name="id">The id of the object to be accessed.</param>
+            <param name="keySeed">The encryption key seed (must be the same that you use when inserted into the database).</param>
+            <returns>returns an instance of T if found.</returns>
+        </member>
+        <member name="M:SQLite.Net.Cipher.Data.SecureDatabase.SQLite#Net#Cipher#Interfaces#ISecureDatabase#SecureGetAll``1(System.String)">
+            <summary>
+            Gets a list of T objects from the database
+            If any objects were found, before returned, this method will decrypt all their properties that have the Secure attribute.
+            </summary>
+            <typeparam name="T">The Type of the object to be accessed</typeparam>
+            <param name="keySeed">The encryption key seed (must be the same that you use when inserted into the database).</param>
+            <returns>returns a List of T if found.</returns>
+        </member>
+        <member name="M:SQLite.Net.Cipher.Data.SecureDatabase.SQLite#Net#Cipher#Interfaces#ISecureDatabase#SecureGetCount``1">
+            <summary>
+            Gets a count of all rows in the table that matches the type T
+            </summary>
+            <typeparam name="T">The type of the object we are trying to get the count for.</typeparam>
+            <returns>int that represent the no of rows (of T) in the db. </returns>
+        </member>
+        <member name="T:SQLite.Net.Cipher.Interfaces.ICryptoService">
+            <summary>
+            An interface of the crypto service. 
+            The SQLite.Net.Cipher uses this service for all encryption/decryption tasks. 
+            </summary>
+        </member>
+        <member name="M:SQLite.Net.Cipher.Interfaces.ISecureDatabase.SecureInsert``1(``0,System.String)">
+            <summary>
+            Inserts into the database
+            Before inserting, it encrypts all propertiese that have the Secure attribute. 
+            </summary>
+            <typeparam name="T">The Type of the object to be inserted</typeparam>
+            <param name="obj"> the object to be inserted to the database</param>
+            <param name="keySeed">The encryption key seed. You must use the same key seed when accessing the object out of the database.</param>
+            <returns>no of affected rows</returns>
+        </member>
+        <member name="M:SQLite.Net.Cipher.Interfaces.ISecureDatabase.SecureInsertOrReplace``1(``0,System.String)">
+            <summary>
+            Inserts or Replace object into the database
+            Before inserting, it encrypts all propertiese that have the Secure attribute. 
+            </summary>
+            <typeparam name="T">The Type of the object to be inserted</typeparam>
+            <param name="obj"> the object to be inserted to the database</param>
+            <param name="keySeed">The encryption key seed. You must use the same key seed when accessing the object out of the database.</param>
+            <returns>no of affected rows</returns>
+        </member>
+        <member name="M:SQLite.Net.Cipher.Interfaces.ISecureDatabase.SecureUpdate``1(``0,System.String)">
+            <summary>
+            Updates a row in the database
+            Before Before Updating, it encrypts all propertiese that have the Secure attribute. 
+            </summary>
+            <typeparam name="T">The Type of the object to be updated</typeparam>
+            <param name="obj"> the object to be updated to the database</param>
+            <param name="keySeed">The encryption key seed. You must use the same key seed when accessing the object out of the database.</param>
+            <returns>no of affected rows</returns>
+        </member>
+        <member name="M:SQLite.Net.Cipher.Interfaces.ISecureDatabase.SecureDelete``1(System.String)">
+            <summary>
+            deletes a row in the database
+            </summary>
+            <typeparam name="T">The Type of the object to be deleted</typeparam>
+            <param name="id">The id of the object to be deleted.</param>
+            <returns>no of affected rows</returns>
+        </member>
+        <member name="M:SQLite.Net.Cipher.Interfaces.ISecureDatabase.SecureGet``1(System.String,System.String)">
+            <summary>
+            Gets an object of the database
+            If the object is found, before returned, this method will decrypt all its properties that have the Secure attribute.
+            </summary>
+            <typeparam name="T">The Type of the object to be accessed</typeparam>
+            <param name="id">The id of the object to be accessed.</param>
+            <param name="keySeed">The encryption key seed (must be the same that you use when inserted into the database).</param>
+            <returns>returns an instance of T if found.</returns>
+        </member>
+        <member name="M:SQLite.Net.Cipher.Interfaces.ISecureDatabase.SecureGetAll``1(System.String)">
+            <summary>
+            Gets a list of T objects from the database
+            If any objects were found, before returned, this method will decrypt all their properties that have the Secure attribute.
+            </summary>
+            <typeparam name="T">The Type of the object to be accessed</typeparam>
+            <param name="keySeed">The encryption key seed (must be the same that you use when inserted into the database).</param>
+            <returns>returns a List of T if found.</returns>
+        </member>
+        <member name="M:SQLite.Net.Cipher.Interfaces.ISecureDatabase.SecureGetCount``1">
+            <summary>
+            Gets a count of all rows in the table that matches the type T
+            </summary>
+            <typeparam name="T">The type of the object we are trying to get the count for.</typeparam>
+            <returns>int that represent the no of rows (of T) in the db. </returns>
+        </member>
+        <member name="M:SQLite.Net.Cipher.Interfaces.ISecureDatabase.SecureExecuteScalar(System.String,System.Object[])">
+            <summary>
+            Executes an sql query against the database. 
+            This method does not do anything more than the base.ExecuteScalar();
+            </summary>
+            <param name="query"></param>
+            <param name="args"></param>
+            <returns>no of affected rows</returns>
+        </member>
+        <member name="M:SQLite.Net.Cipher.Interfaces.ISecureDatabase.SecureQuery``1(System.String,System.String,System.Object[])">
+            <summary>
+            gets a list of objects from the database using Query() method 
+            and it decrypt all object properties that have the attribute Secure. 
+            </summary>
+            <typeparam name="T">The type of the object</typeparam>
+            <param name="query">The Sql query</param>
+            <param name="keySeed">The encryption key seed (must be the same that you use when inserted into the database).</param>
+            <param name="args">The sql query parameters.</param>
+            <returns>List of T </returns>
+        </member>
+        <member name="T:SQLite.Net.Cipher.Interfaces.IModel">
+            <summary>
+            IModel interface
+            All objects that need to be stored in the database need to implement this interface. 
+            The only requirement it has is to provide an Id property. 
+            </summary>
+        </member>
+        <member name="P:SQLite.Net.Cipher.Interfaces.IModel.Id">
+            <summary>
+            Id property that represent the primary key of the object.
+            </summary>
+        </member>
+        <member name="T:SQLite.Net.Cipher.Security.CryptoService">
+            <summary>
+            This entity is responsible for generating keys, encrypting, decrypting data, and computing hash
+            This is the default crypto service that is used by SecureDatabase but you can build your own by implementing ICryptoService
+            </summary>
+        </member>
+        <member name="M:SQLite.Net.Cipher.Security.CryptoService.ComputeHash(System.String)">
+            <summary>
+            Compute a SHA256 hash value of a string
+            </summary>
+            <param name="input"></param>
+            <returns>SHA256 value of the input string</returns>
+        </member>
+        <member name="M:SQLite.Net.Cipher.Security.CryptoService.GenerateRandomKey(System.Int32)">
+            <summary>
+            Generate a random key
+            </summary>
+            <param name="length">Length of the required random key</param>
+            <returns>random key</returns>
+        </member>
+        <member name="M:SQLite.Net.Cipher.Security.CryptoService.Encrypt(System.String,System.String,System.String)">
+            <summary>
+            Encrypts the input dataText using AES algorithm
+            </summary>
+            <param name="dataText">the input text to be encrypted</param>
+            <param name="keyText">the encryption key seed. This can be any text, with any length. </param>
+            <param name="ivText">The vector value, or null</param>
+            <returns>a string that represents the base64 of the encrypted input text</returns>
+        </member>
+        <member name="M:SQLite.Net.Cipher.Security.CryptoService.Decrypt(System.String,System.String,System.String)">
+            <summary>
+            Decrypts the input dataText using AES algorithm
+            </summary>
+            <param name="dataText">the input text (base64) to be decrypted</param>
+            <param name="keyText">the encryption key seed. This must be the same as the key that was used for encrypting the text. </param>
+            <param name="ivText">The vector value, or null</param>
+            <returns>the original text, the result of the decryption.</returns>
+        </member>
+    </members>
+</doc>

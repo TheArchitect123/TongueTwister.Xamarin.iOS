@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9420504b-c109-4e3a-b879-828a51f44565" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/Kronos.TongueTwister/TwisterWCFService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TwisterWCFService.xsd" MetadataType="Schema" ID="c47666d1-be24-40aa-8560-050443be5781" SourceId="1" SourceUrl="http://localhost/Kronos.TongueTwister/TwisterWCFService.svc?xsd=xsd2" />
+    <MetadataFile FileName="TwisterWCFService.wsdl" MetadataType="Wsdl" ID="9051cb01-58a1-4001-b077-3c6cd59f4843" SourceId="1" SourceUrl="http://localhost/Kronos.TongueTwister/TwisterWCFService.svc?wsdl" />
+    <MetadataFile FileName="TwisterWCFService1.xsd" MetadataType="Schema" ID="d0e0e040-ec94-44f6-92f8-75ba85422d9e" SourceId="1" SourceUrl="http://localhost/Kronos.TongueTwister/TwisterWCFService.svc?xsd=xsd0" />
+    <MetadataFile FileName="TwisterWCFService2.xsd" MetadataType="Schema" ID="17334a3a-54bd-40bc-9a56-79df09fcbfda" SourceId="1" SourceUrl="http://localhost/Kronos.TongueTwister/TwisterWCFService.svc?xsd=xsd1" />
+    <MetadataFile FileName="TwisterWCFService.disco" MetadataType="Disco" ID="05d8a834-a138-468a-b993-10e79f1f89e8" SourceId="1" SourceUrl="http://localhost/Kronos.TongueTwister/TwisterWCFService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

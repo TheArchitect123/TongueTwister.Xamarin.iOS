@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Hello"></string>
+    <string name="ApplicationName">Tongue Twister!</string>
+  <string name="PositiveResult">Yes</string>
+  <string name="NegativeResult">Maybe Later</string>
+
+  <!--Categories -->
+
+
+</resources>

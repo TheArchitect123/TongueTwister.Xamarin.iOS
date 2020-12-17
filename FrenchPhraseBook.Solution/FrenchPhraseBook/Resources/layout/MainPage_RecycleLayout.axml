@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:a ="http://schemas.android.com/apk/res-auto"
+      android:orientation="vertical"
+        
+      android:layout_width="match_parent"
+      android:layout_height="100dp"
+      android:id="@+id/MainPageLayout"
+      android:clickable="true"
+      android:focusable="true"
+      android:background="@drawable/NavDrawerStyle">
+
+  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+    <ImageView
+      android:id="@+id/ItemCategory"
+      android:layout_width="60dp"
+      android:layout_height="60dp"
+      android:layout_marginLeft="40dp"
+      android:layout_marginTop="20dp"
+      android:scaleType="fitXY"/>
+
+    <TextView
+      android:id="@+id/CategoryText"
+      android:layout_width="match_parent"
+      android:layout_height="80dp"
+      android:layout_marginEnd="0dp"
+      android:layout_marginLeft="20dp"
+      android:layout_marginTop="30dp"
+      android:textColor="#000000"
+      android:textSize="22sp"/>
+    <TextView
+       android:id="@+id/ArrowIcon"
+       android:layout_width="40dp"
+       android:layout_height="40dp"
+       android:layout_marginEnd="10dp"
+       android:layout_marginLeft="10dp"
+       android:textColor="#000000"
+       android:textSize="26sp"
+       android:text=">"/>
+  </LinearLayout>
+</LinearLayout>

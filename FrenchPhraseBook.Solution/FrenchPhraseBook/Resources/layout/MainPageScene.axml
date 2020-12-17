@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/NavDrawerView">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <!-- Toolbar -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+            <Toolbar
+                android:id="@+id/NewActionBar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#000000"
+                android:theme="@android:style/ThemeOverlay.Material.Dark.ActionBar">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageButton
+                        android:id="@+id/NavDrawerButton"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/menu"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="18dp"
+                        android:scaleType="fitXY"
+                        android:background="@drawable/toolbarripple"
+                        android:layout_alignParentLeft="true" />
+                    <TextView
+                        android:id="@+id/ToolbarTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="55dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="80dp"
+                        android:textSize="18sp"
+                        android:textColor="#FFFFFF"
+                        android:layout_alignParentLeft="true" />
+         
+                </RelativeLayout>
+            </Toolbar>
+        </LinearLayout>
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/CategoryCard_TableView"
+            android:background="@color/material_grey_100" />
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/NavDrawer"
+        android:layout_marginEnd="80dp"
+        android:layout_gravity="start"
+        android:background="#FFFFFF"
+        android:animateLayoutChanges="true" />
+</android.support.v4.widget.DrawerLayout>
